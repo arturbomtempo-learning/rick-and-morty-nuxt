@@ -35,7 +35,7 @@ const { data } = await useFetch('https://rickandmortyapi.com/api/character');
                         </span>
                     </div>
 
-                    <SeeDocumentDetails :action-url="currentCharacter.url" />
+                    <SeeDocumentDetails :action-url="currentCharacter.url" class="mt-auto" />
                 </Card>
             </div>
         </div>
