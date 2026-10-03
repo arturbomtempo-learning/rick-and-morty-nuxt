@@ -12,7 +12,7 @@
                 </header>
 
                 <div class="flex flex-wrap gap-4 justify-center">
-                    <div
+                    <Card
                         v-for="currentCharacter of data.results"
                         class="bg-[#313234] rounded-lg flex gap-4 flex-col p-4 w-full max-w-[294px]"
                     >
@@ -43,7 +43,7 @@
                         </div>
 
                         <SeeDocumentDetails :action-url="currentCharacter.url" />
-                    </div>
+                    </Card>
                 </div>
             </div>
         </section>
@@ -51,6 +51,9 @@
 </template>
 
 <script setup lang="ts">
+import Card from '@/components/Card/index.vue';
+import SeeDocumentDetails from '@/components/SeeDocumentDetails/index.vue';
+
 const { data, status, error, refresh, clear } = await useFetch(
     'https://rickandmortyapi.com/api/character'
 );

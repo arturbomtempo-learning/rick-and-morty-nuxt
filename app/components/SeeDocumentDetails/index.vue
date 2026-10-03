@@ -11,6 +11,6 @@
 
 <script setup>
 const props = defineProps({
-    actionUrl: String
-})
+    actionUrl: String,
+});
 </script>
