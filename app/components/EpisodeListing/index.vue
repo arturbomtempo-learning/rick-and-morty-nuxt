@@ -4,6 +4,7 @@ const { data } = await useFetch('https://rickandmortyapi.com/api/episode');
 
 <template>
     <section>
+        <ListingHeader title="Episódios" />
         <Card v-for="currentEpisode of data.results">
             <p>{{ currentEpisode.name }} | {{ currentEpisode.episode }}</p>
         </Card>
