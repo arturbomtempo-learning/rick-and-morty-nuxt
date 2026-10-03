@@ -1,3 +1,9 @@
+<script setup lang="ts">
+defineProps<{
+    actionUrl: string;
+}>();
+</script>
+
 <template>
     <NuxtLink
         :to="actionUrl"
@@ -8,9 +14,3 @@
         Saiba Mais
     </NuxtLink>
 </template>
-
-<script setup>
-const props = defineProps({
-    actionUrl: String,
-});
-</script>

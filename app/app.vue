@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { data } = await useFetch('https://rickandmortyapi.com/api/character');
+</script>
+
 <template>
     <main class="text-white bg-[#1e1e1e]">
         <section class="flex flex-col w-full max-w-[1224px] mx-auto gap-8">
@@ -12,10 +16,7 @@
                 </header>
 
                 <div class="flex flex-wrap gap-4 justify-center">
-                    <Card
-                        v-for="currentCharacter of data.results"
-                        class="bg-[#313234] rounded-lg flex gap-4 flex-col p-4 w-full max-w-[294px]"
-                    >
+                    <Card v-for="currentCharacter of data?.results" :key="currentCharacter.id">
                         <img
                             :src="currentCharacter.image"
                             width="262"
@@ -49,13 +50,3 @@
         </section>
     </main>
 </template>
-
-<script setup lang="ts">
-import Card from '@/components/Card/index.vue';
-import SeeDocumentDetails from '@/components/SeeDocumentDetails/index.vue';
-
-const { data, status, error, refresh, clear } = await useFetch(
-    'https://rickandmortyapi.com/api/character'
-);
-console.log(data.value);
-</script>
