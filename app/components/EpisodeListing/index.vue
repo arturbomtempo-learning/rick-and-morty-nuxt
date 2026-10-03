@@ -8,7 +8,8 @@ const { data } = await useFetch('https://rickandmortyapi.com/api/episode');
 
         <div class="flex gap-4 flex-wrap justify-center lg:grid lg:grid-cols-[repeat(4,1fr)]">
             <Card
-                v-for="currentEpisode of data.results"
+                v-for="currentEpisode of data?.results"
+                :key="currentEpisode.id"
                 class="flex flex-col gap-2 justify-between min-h-[150px] max-w-[250px]"
             >
                 <div class="flex gap-2 items-center">
@@ -17,7 +18,7 @@ const { data } = await useFetch('https://rickandmortyapi.com/api/episode');
                 </div>
 
                 <div class="flex items-center justify-between">
-                    <SeeDocumentDetails class="my-auto" />
+                    <SeeDocumentDetails :action-url="currentEpisode.url" class="my-auto" />
                     <IconsHeartFilled :width="32" :height="32" />
                 </div>
             </Card>
