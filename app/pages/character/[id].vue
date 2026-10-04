@@ -12,21 +12,57 @@ useHead({
 </script>
 
 <template>
-    <PageContainer>
-        <div class="flex gap-16">
-            <img :src="data.image" width="369" height="461" class="rounded-2xl" />
+    <PageContainer class="flex flex-col gap-10 py-10 px-4">
+        <PageHeader />
 
-            <div class="flex flex-col gap-12">
-                <h1 class="text-5xl">{{ data.name }}</h1>
+        <section class="flex flex-col md:flex-row gap-10 lg:gap-16 items-center md:items-stretch">
+            <img
+                :src="data.image"
+                width="369"
+                height="461"
+                class="w-full max-w-[369px] aspect-[369/461] object-cover rounded-2xl"
+            />
 
-                <p>Participou de {{ data.episode.length }} episódios</p>
+            <div class="flex flex-col gap-8 flex-1 w-full">
+                <div class="flex gap-6 items-center">
+                    <h1 class="font-bold text-4xl lg:text-5xl">{{ data.name }}</h1>
+                    <IconsHeartOutlined :width="40" :height="40" />
+                </div>
 
-                <div class="flex gap-6">
-                    <p>{{ data.status === 'Alive' ? 'Vivo' : 'Morto' }}</p>
-                    <p>{{ data.species }}</p>
-                    <p>{{ data.gender }}</p>
+                <CharacterAttribute>
+                    <template #icon><IconsMonitorPlay /></template>
+                    Participou de {{ data.episode.length }} episódios
+                </CharacterAttribute>
+
+                <div class="flex flex-wrap gap-6">
+                    <CharacterAttribute>
+                        <template #icon>
+                            <IconsPulse :color="data.status === 'Alive' ? '#a3e635' : '#ef4444'" />
+                        </template>
+                        {{ data.status === 'Alive' ? 'Vivo' : 'Morto' }}
+                    </CharacterAttribute>
+
+                    <CharacterAttribute>
+                        <template #icon><IconsAlien /></template>
+                        {{ data.species }}
+                    </CharacterAttribute>
+
+                    <CharacterAttribute>
+                        <template #icon><IconsGenderIntersex /></template>
+                        {{ data.gender }}
+                    </CharacterAttribute>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 w-full max-w-[320px] mt-auto md:self-end">
+                    <LocationCard :name="data.origin.name" :url="data.origin.url">
+                        <template #icon><IconsPlanet :width="32" :height="32" /></template>
+                    </LocationCard>
+
+                    <LocationCard :name="data.location.name" :url="data.location.url">
+                        <template #icon><IconsMapPin :width="32" :height="32" /></template>
+                    </LocationCard>
                 </div>
             </div>
-        </div>
+        </section>
     </PageContainer>
 </template>

@@ -7,13 +7,7 @@ const props = defineProps({
     },
 });
 
-const urlToRedirect = computed(() => {
-    if (props.type === 'character') {
-        return `/character/${props.id}`;
-    }
-
-    return `/episode/${props.id}`;
-});
+const urlToRedirect = computed(() => `/${props.type}/${props.id}`);
 </script>
 
 <template>
