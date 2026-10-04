@@ -27,7 +27,11 @@ useHead({
                 </h1>
 
                 <p class="opacity-70">
-                    {{ error?.statusMessage || 'Tente novamente em alguns instantes.' }}
+                    {{
+                        isNotFound
+                            ? 'O conteúdo que você procura não existe ou foi removido.'
+                            : 'Não conseguimos carregar os dados agora. Tente novamente em alguns instantes.'
+                    }}
                 </p>
 
                 <button

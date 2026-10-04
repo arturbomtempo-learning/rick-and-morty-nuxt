@@ -22,15 +22,20 @@ const status = computed(() => getCharacterStatus(props.character.status));
 
                 <div class="flex flex-col gap-2">
                     <p class="flex gap-2 items-center">
-                        <IconsPulse :width="16" :height="16" :color="status.color" />
+                        <IconsPulse
+                            class="shrink-0"
+                            :width="16"
+                            :height="16"
+                            :color="status.color"
+                        />
                         {{ status.label }}
                     </p>
                     <p class="flex gap-2 items-center">
-                        <IconsAlien :width="16" :height="16" />
+                        <IconsAlien class="shrink-0" :width="16" :height="16" />
                         {{ character.species }}
                     </p>
                     <p class="flex gap-2 items-center">
-                        <IconsPlanet :width="16" :height="16" />
+                        <IconsPlanet class="shrink-0" :width="16" :height="16" />
                         {{ character.origin.name }}
                     </p>
                 </div>

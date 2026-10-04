@@ -10,7 +10,7 @@ if (error.value || !data.value) {
 
     throw createError({
         statusCode: isNotFound ? 404 : 503,
-        statusMessage: isNotFound ? 'Personagem não encontrado' : 'Serviço indisponível',
+        statusMessage: isNotFound ? 'Not Found' : 'Service Unavailable',
         fatal: true,
     });
 }
