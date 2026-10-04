@@ -23,7 +23,11 @@ const residentsLabel = computed(() => {
         <section class="flex flex-col gap-8">
             <div class="flex flex-col gap-4">
                 <IconsPlanet :width="48" :height="48" />
-                <h1 class="font-bold text-4xl lg:text-5xl">{{ data.name }}</h1>
+
+                <div class="flex gap-6 items-center">
+                    <h1 class="font-bold text-4xl lg:text-5xl">{{ data.name }}</h1>
+                    <FavoriteButton type="location" :id="data.id" />
+                </div>
             </div>
 
             <div class="flex flex-wrap gap-6">

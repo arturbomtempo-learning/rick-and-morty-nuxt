@@ -22,7 +22,7 @@ const props = defineProps({
                 <SeeDocumentDetails :id="id" type="location" size="sm" />
             </div>
 
-            <IconsHeartFilled :width="20" :height="20" />
+            <FavoriteButton v-if="id" type="location" :id="id" :size="24" />
         </div>
     </Card>
 </template>

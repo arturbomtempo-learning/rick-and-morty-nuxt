@@ -19,21 +19,11 @@ const episodes = computed(() => data.value?.results.slice(0, props.limit));
         <ListingHeader title="Episódios" :see-all-url="limit ? '/episode' : undefined" />
 
         <div class="flex gap-4 flex-wrap justify-center lg:grid lg:grid-cols-[repeat(4,1fr)]">
-            <Card
+            <EpisodeCard
                 v-for="currentEpisode of episodes"
                 :key="currentEpisode.id"
-                class="flex flex-col gap-2 justify-between min-h-[150px] max-w-[250px]"
-            >
-                <div class="flex gap-2 items-center">
-                    <IconsPlay class="flex-[0_0_24px]" />
-                    <p>{{ currentEpisode.name }} | {{ currentEpisode.episode }}</p>
-                </div>
-
-                <div class="flex items-center justify-between">
-                    <SeeDocumentDetails :url="currentEpisode.url" class="my-auto" />
-                    <IconsHeartFilled :width="32" :height="32" />
-                </div>
-            </Card>
+                :episode="currentEpisode"
+            />
         </div>
 
         <Pagination v-if="!limit && data" :page="page" :total-pages="data.info.pages" />

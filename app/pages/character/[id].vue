@@ -10,14 +10,7 @@ useHead({
     link: [{ rel: 'icon', type: 'image/x-icon', href: data.value.image }],
 });
 
-const statusByValue = {
-    Alive: { label: 'Vivo', color: '#a3e635' },
-    Dead: { label: 'Morto', color: '#ef4444' },
-};
-
-const status = computed(
-    () => statusByValue[data.value.status] ?? { label: 'Desconhecido', color: '#9ca3af' }
-);
+const status = computed(() => getCharacterStatus(data.value.status));
 
 const { data: origin } = await useFetch(data.value.origin.url, {
     immediate: Boolean(data.value.origin.url),
@@ -43,7 +36,7 @@ const { data: currentLocation } = await useFetch(data.value.location.url, {
             <div class="flex flex-col gap-8 flex-1 w-full">
                 <div class="flex gap-6 items-center">
                     <h1 class="font-bold text-4xl lg:text-5xl">{{ data.name }}</h1>
-                    <IconsHeartOutlined :width="40" :height="40" />
+                    <FavoriteButton type="character" :id="data.id" />
                 </div>
 
                 <CharacterAttribute>

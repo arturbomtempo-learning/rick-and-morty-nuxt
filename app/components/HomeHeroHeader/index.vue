@@ -13,7 +13,7 @@ const highlightImage = computed(() =>
         class="bg-hero pt-16 border-b border-primary dark:border-transparent transition-colors duration-300"
     >
         <PageContainer class="flex flex-col gap-5">
-            <img src="/images/brand/logo.png" width="220" height="64" />
+            <PageHeader />
 
             <div class="flex gap-16 justify-between">
                 <div class="flex flex-col gap-6 h-fit self-center">
