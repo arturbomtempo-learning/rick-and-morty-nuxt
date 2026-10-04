@@ -9,6 +9,15 @@ useHead({
     title: `${data.value.name} | Rick and Morty API`,
     link: [{ rel: 'icon', type: 'image/x-icon', href: data.value.image }],
 });
+
+const statusByValue = {
+    Alive: { label: 'Vivo', color: '#a3e635' },
+    Dead: { label: 'Morto', color: '#ef4444' },
+};
+
+const status = computed(
+    () => statusByValue[data.value.status] ?? { label: 'Desconhecido', color: '#9ca3af' }
+);
 </script>
 
 <template>
@@ -18,9 +27,9 @@ useHead({
         <section class="flex flex-col md:flex-row gap-10 lg:gap-16 items-center md:items-stretch">
             <img
                 :src="data.image"
-                width="369"
-                height="461"
-                class="w-full max-w-[369px] aspect-[369/461] object-cover rounded-2xl"
+                width="340"
+                height="425"
+                class="w-full max-w-[340px] aspect-[4/5] object-cover rounded-2xl"
             />
 
             <div class="flex flex-col gap-8 flex-1 w-full">
@@ -36,10 +45,8 @@ useHead({
 
                 <div class="flex flex-wrap gap-6">
                     <CharacterAttribute>
-                        <template #icon>
-                            <IconsPulse :color="data.status === 'Alive' ? '#a3e635' : '#ef4444'" />
-                        </template>
-                        {{ data.status === 'Alive' ? 'Vivo' : 'Morto' }}
+                        <template #icon><IconsPulse :color="status.color" /></template>
+                        {{ status.label }}
                     </CharacterAttribute>
 
                     <CharacterAttribute>
@@ -48,12 +55,17 @@ useHead({
                     </CharacterAttribute>
 
                     <CharacterAttribute>
-                        <template #icon><IconsGenderIntersex /></template>
+                        <template #icon>
+                            <IconsGenderMale v-if="data.gender === 'Male'" />
+                            <IconsGenderFemale v-else-if="data.gender === 'Female'" />
+                            <IconsGenderNeuter v-else-if="data.gender === 'Genderless'" />
+                            <IconsQuestion v-else />
+                        </template>
                         {{ data.gender }}
                     </CharacterAttribute>
                 </div>
 
-                <div class="grid grid-cols-2 gap-4 w-full max-w-[320px] mt-auto md:self-end">
+                <div class="grid grid-cols-2 gap-4 w-full max-w-[300px] mt-auto md:self-end">
                     <LocationCard :name="data.origin.name" :url="data.origin.url">
                         <template #icon><IconsPlanet :width="32" :height="32" /></template>
                     </LocationCard>

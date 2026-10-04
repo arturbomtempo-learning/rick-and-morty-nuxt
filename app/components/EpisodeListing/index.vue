@@ -18,7 +18,7 @@ const { data } = await useFetch('https://rickandmortyapi.com/api/episode');
                 </div>
 
                 <div class="flex items-center justify-between">
-                    <SeeDocumentDetails :action-url="currentEpisode.url" class="my-auto" />
+                    <SeeDocumentDetails :url="currentEpisode.url" class="my-auto" />
                     <IconsHeartFilled :width="32" :height="32" />
                 </div>
             </Card>

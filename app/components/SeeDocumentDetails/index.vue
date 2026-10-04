@@ -5,17 +5,24 @@ const props = defineProps({
         type: String,
         default: 'character',
     },
+    url: String,
+    size: {
+        type: String,
+        default: 'md',
+    },
 });
 
-const urlToRedirect = computed(() => `/${props.type}/${props.id}`);
+const urlToRedirect = computed(() => props.url ?? `/${props.type}/${props.id}`);
 </script>
 
 <template>
     <NuxtLink
         :to="urlToRedirect"
-        class="self-end bg-[#11b0c8] flex gap-2 py-2 px-3 rounded-[32px] text-sm items-center"
+        :target="url ? '_blank' : undefined"
+        class="self-end bg-[#11b0c8] flex rounded-[32px] items-center whitespace-nowrap"
+        :class="size === 'sm' ? 'gap-1 py-1 px-2 text-xs' : 'gap-2 py-2 px-3 text-sm'"
     >
-        <IconsInfo />
+        <IconsInfo :width="size === 'sm' ? 14 : 20" :height="size === 'sm' ? 14 : 20" />
         Saiba Mais
     </NuxtLink>
 </template>

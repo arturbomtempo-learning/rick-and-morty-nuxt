@@ -1,7 +1,7 @@
 <template>
-    <main class="bg-[#1e1e1e] text-white">
+    <main class="bg-[#1e1e1e] text-white min-h-screen flex flex-col">
         <slot />
 
-        <Footer />
+        <Footer class="mt-auto" />
     </main>
 </template>

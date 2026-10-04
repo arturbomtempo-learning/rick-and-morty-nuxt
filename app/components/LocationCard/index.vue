@@ -8,18 +8,20 @@ const { data: location } = await useFetch(props.url, { immediate: Boolean(props.
 </script>
 
 <template>
-    <Card class="items-center text-center">
-        <slot name="icon" />
+    <Card>
+        <div class="flex flex-col gap-2 items-center text-center text-xs h-full">
+            <slot name="icon" />
 
-        <div class="flex flex-col gap-1 text-sm">
-            <p v-if="location">{{ location.type }}</p>
-            <p class="text-[#11b0c8]">{{ name }}</p>
+            <div class="flex flex-col gap-1">
+                <p v-if="location">{{ location.type }}</p>
+                <p class="text-[#11b0c8]">{{ name }}</p>
+            </div>
+
+            <div v-if="url" class="mt-auto">
+                <SeeDocumentDetails :url="url" size="sm" />
+            </div>
+
+            <IconsHeartFilled :width="20" :height="20" />
         </div>
-
-        <div v-if="location" class="flex justify-center">
-            <SeeDocumentDetails :id="location.id" type="location" />
-        </div>
-
-        <IconsHeartFilled :width="24" :height="24" />
     </Card>
 </template>
