@@ -44,13 +44,7 @@ function isVisible(type) {
                 :is-empty="!characters.length"
                 empty-message="Você ainda não favoritou nenhum personagem."
             >
-                <div class="flex flex-wrap gap-4 justify-center xl:justify-start">
-                    <CharacterCard
-                        v-for="currentCharacter of characters"
-                        :key="currentCharacter.id"
-                        :character="currentCharacter"
-                    />
-                </div>
+                <CharactersGrid :characters="characters" />
             </FavoritesSection>
 
             <FavoritesSection
@@ -62,15 +56,7 @@ function isVisible(type) {
                 :is-empty="!episodes.length"
                 empty-message="Você ainda não favoritou nenhum episódio."
             >
-                <div
-                    class="flex gap-4 flex-wrap justify-center lg:grid lg:grid-cols-[repeat(4,1fr)]"
-                >
-                    <EpisodeCard
-                        v-for="currentEpisode of episodes"
-                        :key="currentEpisode.id"
-                        :episode="currentEpisode"
-                    />
-                </div>
+                <EpisodesGrid :episodes="episodes" />
             </FavoritesSection>
 
             <FavoritesSection
@@ -82,17 +68,7 @@ function isVisible(type) {
                 :is-empty="!locations.length"
                 empty-message="Você ainda não favoritou nenhuma localização."
             >
-                <div
-                    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 w-full"
-                >
-                    <LocationCard
-                        v-for="currentLocation of locations"
-                        :key="currentLocation.id"
-                        :id="currentLocation.id"
-                        :name="currentLocation.name"
-                        :type="currentLocation.type"
-                    />
-                </div>
+                <LocationsGrid :locations="locations" />
             </FavoritesSection>
         </PageContainer>
     </div>

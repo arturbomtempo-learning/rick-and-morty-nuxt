@@ -7,7 +7,7 @@ const status = computed(() => getCharacterStatus(props.character.status));
 </script>
 
 <template>
-    <Card>
+    <Card class="max-w-[294px]">
         <img
             :src="character.image"
             :alt="character.name"

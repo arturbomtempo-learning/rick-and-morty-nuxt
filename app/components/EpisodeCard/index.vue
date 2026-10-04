@@ -5,7 +5,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <Card class="flex flex-col gap-2 justify-between min-h-[150px] max-w-[250px]">
+    <Card class="justify-between min-h-[150px]">
         <div class="flex gap-2 items-center">
             <IconsPlay class="flex-[0_0_24px]" />
             <p>{{ episode.name }} | {{ episode.episode }}</p>

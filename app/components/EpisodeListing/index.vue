@@ -7,7 +7,7 @@ const props = defineProps({
     },
 });
 
-const { data } = await useFetch('https://rickandmortyapi.com/api/episode', {
+const { data, error } = await useFetch('https://rickandmortyapi.com/api/episode', {
     query: { page: computed(() => props.page) },
 });
 
@@ -18,13 +18,11 @@ const episodes = computed(() => data.value?.results.slice(0, props.limit));
     <section class="flex flex-col gap-8 items-center xl:items-start">
         <ListingHeader title="Episódios" :see-all-url="limit ? '/episode' : undefined" />
 
-        <div class="flex gap-4 flex-wrap justify-center lg:grid lg:grid-cols-[repeat(4,1fr)]">
-            <EpisodeCard
-                v-for="currentEpisode of episodes"
-                :key="currentEpisode.id"
-                :episode="currentEpisode"
-            />
-        </div>
+        <p v-if="error" class="opacity-70 text-center xl:text-left">
+            Não foi possível carregar os episódios. Tente novamente mais tarde.
+        </p>
+
+        <EpisodesGrid v-else :episodes="episodes" />
 
         <Pagination v-if="!limit && data" :page="page" :total-pages="data.info.pages" />
     </section>

@@ -3,7 +3,17 @@ const route = useRoute();
 
 const { id } = route.params;
 
-const { data } = await useFetch(`https://rickandmortyapi.com/api/location/${id}`);
+const { data, error } = await useFetch(`https://rickandmortyapi.com/api/location/${id}`);
+
+if (error.value || !data.value) {
+    const isNotFound = error.value?.statusCode === 404;
+
+    throw createError({
+        statusCode: isNotFound ? 404 : 503,
+        statusMessage: isNotFound ? 'Localização não encontrada' : 'Serviço indisponível',
+        fatal: true,
+    });
+}
 
 useHead({
     title: `${data.value.name} | Rick and Morty API`,
@@ -17,7 +27,7 @@ const residentsLabel = computed(() => {
 </script>
 
 <template>
-    <PageContainer class="flex flex-col gap-10 py-10 px-4">
+    <PageContainer class="flex flex-col gap-10 py-10 px-4 xl:px-0">
         <PageHeader />
 
         <section class="flex flex-col gap-8">

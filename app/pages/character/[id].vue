@@ -3,7 +3,17 @@ const route = useRoute();
 
 const { id } = route.params;
 
-const { data } = await useFetch(`https://rickandmortyapi.com/api/character/${id}`);
+const { data, error } = await useFetch(`https://rickandmortyapi.com/api/character/${id}`);
+
+if (error.value || !data.value) {
+    const isNotFound = error.value?.statusCode === 404;
+
+    throw createError({
+        statusCode: isNotFound ? 404 : 503,
+        statusMessage: isNotFound ? 'Personagem não encontrado' : 'Serviço indisponível',
+        fatal: true,
+    });
+}
 
 useHead({
     title: `${data.value.name} | Rick and Morty API`,
@@ -22,12 +32,13 @@ const { data: currentLocation } = await useFetch(data.value.location.url, {
 </script>
 
 <template>
-    <PageContainer class="flex flex-col gap-10 py-10 px-4">
+    <PageContainer class="flex flex-col gap-10 py-10 px-4 xl:px-0">
         <PageHeader />
 
         <section class="flex flex-col md:flex-row gap-10 lg:gap-16 items-center md:items-stretch">
             <img
                 :src="data.image"
+                :alt="data.name"
                 width="340"
                 height="425"
                 class="w-full max-w-[340px] aspect-[4/5] object-cover rounded-2xl"

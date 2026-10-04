@@ -2,7 +2,10 @@
 const { isDark } = useTheme();
 
 useHead({
-    htmlAttrs: { class: computed(() => (isDark.value ? 'dark' : 'light')) },
+    htmlAttrs: {
+        lang: 'pt-BR',
+        class: computed(() => (isDark.value ? 'dark' : 'light')),
+    },
 });
 </script>
 
