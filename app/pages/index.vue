@@ -8,9 +8,9 @@ useHead({
     <div class="flex flex-col gap-16">
         <HomeHeroHeader />
 
-        <PageContainer>
-            <CharactersListing />
-            <EpisodeListing />
+        <PageContainer class="flex flex-col gap-20 px-4 xl:px-0">
+            <CharactersListing :limit="8" />
+            <EpisodeListing :limit="4" />
         </PageContainer>
     </div>
 </template>
