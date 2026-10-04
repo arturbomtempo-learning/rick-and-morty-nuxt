@@ -12,7 +12,7 @@ const props = defineProps({
         </div>
 
         <div class="flex gap-2 items-center justify-between">
-            <SeeDocumentDetails :url="episode.url" class="my-auto" />
+            <SeeDocumentDetails :id="episode.id" type="episode" class="my-auto" />
             <FavoriteButton type="episode" :id="episode.id" :size="32" />
         </div>
     </Card>
