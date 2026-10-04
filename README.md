@@ -1,4 +1,4 @@
-# 🛸 Rick and Morty Nuxt
+# Rick and Morty Nuxt
 
 <table>
   <tr>
