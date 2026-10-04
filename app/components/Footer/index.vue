@@ -3,7 +3,7 @@
 <template>
     <footer class="flex flex-col">
         <div class="py-20 flex justify-between items-center">
-            <img src="/images/logo.png" />
+            <img src="/images/brand/logo.png" />
             <BackToTop />
         </div>
         <div class="border-t-2 flex justify-between py-6">
