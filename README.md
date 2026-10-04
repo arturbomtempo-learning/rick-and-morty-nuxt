@@ -1,8 +1,5 @@
 # 🛸 Rick and Morty Nuxt
 
-> [!NOTE]
-> A web application to explore the Rick and Morty universe, built with **Nuxt** and **Vue.js** on top of the public [Rick and Morty API](https://rickandmortyapi.com/). Browse characters, episodes and locations, save your favorites and switch between light and dark themes.
-
 <table>
   <tr>
     <td width="800px">
@@ -55,7 +52,6 @@
 - [References](#-references)
 - [Author](#-author)
 - [Contributing](#-contributing)
-- [Acknowledgments](#-acknowledgments)
 - [License](#-license)
 
 ---
@@ -63,7 +59,6 @@
 ## 🌐 Useful Links
 
 - 🚀 **Live demo:** [rick-and-morty-api-artur.vercel.app](https://rick-and-morty-api-artur.vercel.app/)
-    > The application running in production, hosted on Vercel.
 - 📦 **Repository:** [arturbomtempo-learning/rick-and-morty-nuxt](https://github.com/arturbomtempo-learning/rick-and-morty-nuxt)
 - 📖 **API used:** [Rick and Morty API](https://rickandmortyapi.com/documentation)
 
@@ -89,16 +84,16 @@ The main goal is educational: to practice the core concepts of the Nuxt ecosyste
 
 ## ✨ Main Features
 
-- 🏠 **Home page:** highlights of characters, episodes and locations, each with a shortcut to its full listing.
-- 📋 **Paginated listings:** dedicated pages for all characters, episodes and locations, with page navigation through the URL.
-- 🔎 **Character details:** status, species, gender, number of episodes, origin and current location.
-- 📺 **Episode details:** episode code, air date and number of characters.
-- 🪐 **Location details:** type, dimension and number of residents.
-- ❤️ **Favorites:** favorite and unfavorite characters, episodes and locations with a single click. Favorites are saved in the browser and stay there after closing the site, and multiple open tabs stay in sync.
-- ⭐ **Favorites page:** all favorites in one place, with filters by type.
-- 🌗 **Light and dark theme:** the chosen theme is saved in a cookie, so the page is already rendered in the right theme on the next visit, with no flicker.
-- 📱 **Responsive layout:** designed to work well on phones, tablets and desktops.
-- 🚫 **Error handling:** a custom error page for missing content and friendly messages when the API is unavailable.
+- **Home page:** highlights of characters, episodes and locations, each with a shortcut to its full listing.
+- **Paginated listings:** dedicated pages for all characters, episodes and locations, with page navigation through the URL.
+- **Character details:** status, species, gender, number of episodes, origin and current location.
+- **Episode details:** episode code, air date and number of characters.
+- **Location details:** type, dimension and number of residents.
+- **Favorites:** favorite and unfavorite characters, episodes and locations with a single click. Favorites are saved in the browser and stay there after closing the site, and multiple open tabs stay in sync.
+- **Favorites page:** all favorites in one place, with filters by type.
+- **Light and dark theme:** the chosen theme is saved in a cookie, so the page is already rendered in the right theme on the next visit, with no flicker.
+- **Responsive layout:** designed to work well on phones, tablets and desktops.
+- **Error handling:** a custom error page for missing content and friendly messages when the API is unavailable.
 
 ---
 
@@ -159,8 +154,7 @@ Some important decisions:
 - **Node.js:** version **22.19** or higher (required by Nuxt 4)
 - **Package manager:** npm (comes with Node.js)
 
-> [!NOTE]
-> No environment variables are needed. The Rick and Morty API is public and does not require an API key.
+No environment variables are needed. The Rick and Morty API is public and does not require an API key.
 
 ### Installing Dependencies
 
@@ -187,8 +181,7 @@ npm run dev
 
 ⚡ _The application will be available at **http://localhost:3000**._
 
-> [!TIP]
-> If you create or change the `tailwind.config.ts` file, restart the development server so the new configuration is loaded.
+If you create or change the `tailwind.config.ts` file, restart the development server so the new configuration is loaded.
 
 ---
 
@@ -227,28 +220,28 @@ The build generates the `.output/` directory, which can be deployed to any platf
 ```
 .
 ├── app/
-│   ├── assets/css/          # 🎨 Tailwind entry file and theme tokens (CSS variables).
-│   ├── components/          # 🧱 Reusable components (cards, grids, headers, pagination, etc.).
-│   │   └── icons/           # 💡 SVG icon components.
-│   ├── composables/         # 🎣 Shared logic: theme and favorites.
-│   ├── layouts/             # 🖼️ Default layout shared by all pages.
-│   ├── pages/               # 📄 File based routes.
-│   │   ├── character/       # 👤 Characters listing and details.
-│   │   ├── episode/         # 📺 Episodes listing and details.
-│   │   ├── location/        # 🪐 Locations listing and details.
-│   │   ├── favorites/       # ❤️ Favorites page.
-│   │   └── index.vue        # 🏠 Home page.
-│   ├── plugins/             # 🔌 Client plugin that loads and syncs the favorites.
-│   ├── utils/               # 🛠️ Helper functions.
-│   ├── app.vue              # 🌳 Root component (theme and language on the <html> element).
-│   └── error.vue            # 🚫 Custom error page.
+│   ├── assets/css/          # Tailwind entry file and theme tokens (CSS variables).
+│   ├── components/          # Reusable components (cards, grids, headers, pagination, etc.).
+│   │   └── icons/           # SVG icon components.
+│   ├── composables/         # Shared logic: theme and favorites.
+│   ├── layouts/             # Default layout shared by all pages.
+│   ├── pages/               # File based routes.
+│   │   ├── character/       # Characters listing and details.
+│   │   ├── episode/         # Episodes listing and details.
+│   │   ├── location/        # Locations listing and details.
+│   │   ├── favorites/       # Favorites page.
+│   │   └── index.vue        # Home page.
+│   ├── plugins/             # Client plugin that loads and syncs the favorites.
+│   ├── utils/               # Helper functions.
+│   ├── app.vue              # Root component (theme and language on the <html> element).
+│   └── error.vue            # Custom error page.
 ├── public/
-│   └── images/              # 🖼️ Logo and highlight images.
-├── nuxt.config.ts           # ⚙️ Nuxt configuration.
-├── tailwind.config.ts       # 🎨 Tailwind configuration and color tokens.
-├── .prettierrc              # ✨ Prettier configuration.
-├── LICENSE.md               # ⚖️ Project license.
-└── package.json             # 📦 Dependencies and scripts.
+│   └── images/              # Logo and highlight images.
+├── nuxt.config.ts           # Nuxt configuration.
+├── tailwind.config.ts       # Tailwind configuration and color tokens.
+├── .prettierrc              # Prettier configuration.
+├── LICENSE.md               # Project license.
+└── package.json             # Dependencies and scripts.
 ```
 
 ---
@@ -280,14 +273,6 @@ Contributions, suggestions and feedback are welcome.
 3. Commit your changes following [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) (`git commit -m 'feat: add my feature'`).
 4. Push to the branch (`git push origin feature/my-feature`).
 5. Open a **Pull Request**.
-
----
-
-## 🙏 Acknowledgments
-
-- [**Código ao Ponto**](https://codigoaoponto.com/): for the class that served as the starting point for this project.
-- [**Figma Community**](https://www.figma.com/community): for the free design and prototype that served as the visual reference for the interface.
-- [**Rick and Morty API**](https://rickandmortyapi.com/): for providing a free, well documented public API with all the data used in the application.
 
 ---
 
