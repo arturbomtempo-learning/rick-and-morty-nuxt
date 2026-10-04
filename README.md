@@ -7,7 +7,7 @@
   <tr>
     <td width="800px">
       <div align="justify">
-        <b>Rick and Morty Nuxt</b> is a study project created to deepen my knowledge of <b>Nuxt</b> and <b>Vue.js</b> in the development of modern web applications. It started from a class in the <a href="https://codigoaoponto.com/">Código ao Ponto</a> course and grew well beyond it: on top of the original content, I refined the code structure and added features that were not covered in the class, such as <i>pagination</i>, <i>location pages</i>, a <i>favorites system</i> with persistence, a <i>light and dark theme</i> and a <i>fully responsive layout</i>. The result is a complete and organized application that puts into practice file based routing, server side rendering, reusable components, composables and state management in the Nuxt ecosystem.
+        <b>Rick and Morty Nuxt</b> is a study project created to deepen my knowledge of <b>Nuxt</b> and <b>Vue.js</b> in the development of modern web applications. It started from a class in the <a href="https://codigoaoponto.com/">Código ao Ponto</a> course and grew well beyond it: on top of the original content, I refined the code structure and added features that were not covered in the class, such as <i>pagination</i>, <i>location pages</i>, a <i>favorites system</i> with persistence, a <i>light and dark theme</i> and a <i>fully responsive layout</i>. The interface was built from a design shared by the <a href="https://www.figma.com/community">Figma Community</a>. The result is a complete and organized application that puts into practice file based routing, server side rendering, reusable components, composables and state management in the Nuxt ecosystem.
       </div>
     </td>
     <td>
@@ -42,6 +42,7 @@
 - [Useful Links](#-useful-links)
 - [About the Project](#-about-the-project)
 - [Main Features](#-main-features)
+- [Demo](#-demo)
 - [Technologies](#-technologies)
 - [Architecture](#-architecture)
 - [Installation and Running](#-installation-and-running)
@@ -72,7 +73,7 @@
 
 This project was born as a hands on way to learn **Nuxt** and **Vue.js** by building a real web application. It consumes the public [Rick and Morty API](https://rickandmortyapi.com/), which provides data about the show's characters, episodes and locations, and turns it into a navigable, responsive and pleasant interface.
 
-The starting point was a class from the [Código ao Ponto](https://codigoaoponto.com/) course. After following the class, I kept improving the application on my own, both in code quality and in features. Some of the improvements that were **not part of the original class** include:
+The starting point was a class from the [Código ao Ponto](https://codigoaoponto.com/) course, and the visual design and prototype come from the [Figma Community](https://www.figma.com/community), where designers share free resources. After following the class, I kept improving the application on my own, both in code quality and in features. Some of the improvements that were **not part of the original class** include:
 
 - Dedicated listing pages with **pagination** for characters, episodes and locations.
 - **Location** listing and detail pages, and **episode** detail pages.
@@ -101,6 +102,22 @@ The main goal is educational: to practice the core concepts of the Nuxt ecosyste
 
 ---
 
+## 🎥 Demo
+
+Screenshots of the main screens of the application. You can also try it live at [rick-and-morty-api-artur.vercel.app](https://rick-and-morty-api-artur.vercel.app/).
+
+|                                                                           **Home (dark theme)**                                                                            |                                                                             **Home (episodes and locations)**                                                                              |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|   <img src="https://arturbomtempo-dev.github.io/arturbomtempo-cdn/assets/images/projects/rick-and-morty-api/home-1.png" alt="Home page in the dark theme" width="100%">    | <img src="https://arturbomtempo-dev.github.io/arturbomtempo-cdn/assets/images/projects/rick-and-morty-api/home-2.png" alt="Episodes and locations sections on the home page" width="100%"> |
+|                                                                           **Home (light theme)**                                                                           |                                                                                   **Character details**                                                                                    |
+| <img src="https://arturbomtempo-dev.github.io/arturbomtempo-cdn/assets/images/projects/rick-and-morty-api/home-light.png" alt="Home page in the light theme" width="100%"> |        <img src="https://arturbomtempo-dev.github.io/arturbomtempo-cdn/assets/images/projects/rick-and-morty-api/character-details.png" alt="Character details page" width="100%">         |
+|                                                                            **Episode details**                                                                             |                                                                                    **Location details**                                                                                    |
+|  <img src="https://arturbomtempo-dev.github.io/arturbomtempo-cdn/assets/images/projects/rick-and-morty-api/episode-details.png" alt="Episode details page" width="100%">   |         <img src="https://arturbomtempo-dev.github.io/arturbomtempo-cdn/assets/images/projects/rick-and-morty-api/location-details.png" alt="Location details page" width="100%">          |
+|                                                                             **Favorites page**                                                                             |                                                                                    **Error page (404)**                                                                                    |
+|        <img src="https://arturbomtempo-dev.github.io/arturbomtempo-cdn/assets/images/projects/rick-and-morty-api/favorites.png" alt="Favorites page" width="100%">         |              <img src="https://arturbomtempo-dev.github.io/arturbomtempo-cdn/assets/images/projects/rick-and-morty-api/error-page.png" alt="Custom error page" width="100%">               |
+
+---
+
 ## 🛠 Technologies
 
 The following tools and libraries were used to build this project.
@@ -112,6 +129,7 @@ The following tools and libraries were used to build this project.
 - **Build tool:** [Vite](https://vite.dev/), bundled with Nuxt
 - **Data source:** [Rick and Morty API](https://rickandmortyapi.com/) (public REST API, no key required)
 - **Code formatting:** [Prettier](https://prettier.io/)
+- **Design and prototype:** [Figma](https://www.figma.com/), from a layout shared by the Figma Community
 
 ---
 
@@ -268,6 +286,7 @@ Contributions, suggestions and feedback are welcome.
 ## 🙏 Acknowledgments
 
 - [**Código ao Ponto**](https://codigoaoponto.com/): for the class that served as the starting point for this project.
+- [**Figma Community**](https://www.figma.com/community): for the free design and prototype that served as the visual reference for the interface.
 - [**Rick and Morty API**](https://rickandmortyapi.com/): for providing a free, well documented public API with all the data used in the application.
 
 ---
