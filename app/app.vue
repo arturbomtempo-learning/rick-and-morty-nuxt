@@ -1,6 +1,8 @@
 <script setup>
+const { isDark } = useTheme();
+
 useHead({
-    bodyAttrs: { class: 'bg-[#1e1e1e]' },
+    htmlAttrs: { class: computed(() => (isDark.value ? 'dark' : 'light')) },
 });
 </script>
 

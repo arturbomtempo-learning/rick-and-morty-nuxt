@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root,
+    .dark {
+        --color-background: 30 30 30;
+        --color-surface: 49 50 52;
+        --color-hero: 0 0 0;
+        --color-foreground: 255 255 255;
+        --color-primary: 17 176 200;
+        color-scheme: dark;
+    }
+
+    .light {
+        --color-background: 255 255 255;
+        --color-surface: 245 245 245;
+        --color-hero: 255 255 255;
+        --color-foreground: 43 43 43;
+        color-scheme: light;
+    }
+
+    body {
+        background-color: rgb(var(--color-background));
+        color: rgb(var(--color-foreground));
+        transition:
+            background-color 300ms,
+            color 300ms;
+    }
+}

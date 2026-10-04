@@ -2,8 +2,8 @@
 const {
     width = 48,
     height = 48,
-    color = '#fff',
-    secondaryColor = '#e4f4f4',
+    color = 'currentColor',
+    secondaryColor = 'currentColor',
 } = defineProps<{
     width?: number;
     height?: number;

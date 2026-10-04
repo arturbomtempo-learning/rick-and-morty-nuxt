@@ -10,7 +10,7 @@ const props = defineProps({
         <NuxtLink
             v-if="page > 1"
             :to="{ query: { page: page - 1 } }"
-            class="py-2 px-4 bg-[#313234] rounded-[32px]"
+            class="py-2 px-4 bg-surface rounded-[32px]"
         >
             Anterior
         </NuxtLink>
@@ -20,7 +20,7 @@ const props = defineProps({
         <NuxtLink
             v-if="page < totalPages"
             :to="{ query: { page: page + 1 } }"
-            class="py-2 px-4 bg-[#11b0c8] rounded-[32px]"
+            class="py-2 px-4 bg-primary text-white rounded-[32px]"
         >
             Próxima
         </NuxtLink>

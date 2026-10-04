@@ -4,7 +4,9 @@
             <img src="/images/brand/logo.png" width="165" height="48" />
         </NuxtLink>
 
-        <button class="flex gap-2 items-center py-2 px-3 bg-[#11b0c8] rounded-[32px] text-sm">
+        <button
+            class="flex gap-2 items-center py-2 px-3 bg-primary text-white rounded-[32px] text-sm"
+        >
             <IconsHeartOutlined :width="20" :height="20" color="#fff" />
             Lista de favoritos
         </button>

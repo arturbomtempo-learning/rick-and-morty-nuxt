@@ -12,7 +12,7 @@ const props = defineProps({
         <NuxtLink
             v-if="seeAllUrl"
             :to="seeAllUrl"
-            class="flex gap-2 py-2 px-3 bg-[#313234] rounded-[32px]"
+            class="flex gap-2 items-center py-2 px-3 rounded-[32px] bg-primary text-white dark:bg-surface dark:text-foreground transition-colors"
         >
             <IconsSquaresFour />
             Ver todos

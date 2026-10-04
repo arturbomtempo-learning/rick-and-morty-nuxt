@@ -13,7 +13,7 @@
 
                     <p>
                         Desenvolvido por
-                        <span class="text-[#11b0c8] font-bold">Artur Bomtempo</span>
+                        <span class="text-primary font-bold">Artur Bomtempo</span>
                     </p>
                 </span>
             </div>

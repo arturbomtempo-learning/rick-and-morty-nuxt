@@ -2,7 +2,7 @@
 const {
     width = 24,
     height = 24,
-    color = '#fff',
+    color = 'currentColor',
 } = defineProps<{
     width?: number;
     height?: number;

@@ -14,7 +14,7 @@ const { data: location } = await useFetch(props.url, { immediate: Boolean(props.
 
             <div class="flex flex-col gap-1">
                 <p v-if="location">{{ location.type }}</p>
-                <p class="text-[#11b0c8]">{{ name }}</p>
+                <p class="text-primary">{{ name }}</p>
             </div>
 
             <div v-if="url" class="mt-auto">
