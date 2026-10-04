@@ -1,6 +1,6 @@
 <script setup>
 const props = defineProps({
-    id: String,
+    id: Number,
     type: {
         type: String,
         default: 'character',
