@@ -17,7 +17,7 @@ if (error.value || !data.value) {
 
 useHead({
     title: `${data.value.name} | Rick and Morty API`,
-    link: [{ rel: 'icon', type: 'image/x-icon', href: data.value.image }],
+    link: [{ key: 'favicon', rel: 'icon', type: 'image/x-icon', href: data.value.image }],
 });
 
 const status = computed(() => getCharacterStatus(data.value.status));
