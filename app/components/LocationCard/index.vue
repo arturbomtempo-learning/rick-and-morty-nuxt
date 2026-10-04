@@ -1,24 +1,25 @@
 <script setup>
 const props = defineProps({
+    id: Number,
     name: String,
-    url: String,
+    type: String,
 });
-
-const { data: location } = await useFetch(props.url, { immediate: Boolean(props.url) });
 </script>
 
 <template>
     <Card>
         <div class="flex flex-col gap-2 items-center text-center text-xs h-full">
-            <slot name="icon" />
+            <slot name="icon">
+                <IconsPlanet :width="32" :height="32" />
+            </slot>
 
             <div class="flex flex-col gap-1">
-                <p v-if="location">{{ location.type }}</p>
+                <p v-if="type">{{ type }}</p>
                 <p class="text-primary">{{ name }}</p>
             </div>
 
-            <div v-if="url" class="mt-auto">
-                <SeeDocumentDetails :url="url" size="sm" />
+            <div v-if="id" class="mt-auto">
+                <SeeDocumentDetails :id="id" type="location" size="sm" />
             </div>
 
             <IconsHeartFilled :width="20" :height="20" />

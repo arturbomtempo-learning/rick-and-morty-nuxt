@@ -18,6 +18,14 @@ const statusByValue = {
 const status = computed(
     () => statusByValue[data.value.status] ?? { label: 'Desconhecido', color: '#9ca3af' }
 );
+
+const { data: origin } = await useFetch(data.value.origin.url, {
+    immediate: Boolean(data.value.origin.url),
+});
+
+const { data: currentLocation } = await useFetch(data.value.location.url, {
+    immediate: Boolean(data.value.location.url),
+});
 </script>
 
 <template>
@@ -66,11 +74,15 @@ const status = computed(
                 </div>
 
                 <div class="grid grid-cols-2 gap-4 w-full max-w-[300px] mt-auto md:self-end">
-                    <LocationCard :name="data.origin.name" :url="data.origin.url">
+                    <LocationCard :id="origin?.id" :name="data.origin.name" :type="origin?.type">
                         <template #icon><IconsPlanet :width="32" :height="32" /></template>
                     </LocationCard>
 
-                    <LocationCard :name="data.location.name" :url="data.location.url">
+                    <LocationCard
+                        :id="currentLocation?.id"
+                        :name="data.location.name"
+                        :type="currentLocation?.type"
+                    >
                         <template #icon><IconsMapPin :width="32" :height="32" /></template>
                     </LocationCard>
                 </div>
