@@ -6,7 +6,11 @@ useHead({
 
 <template>
     <div class="flex flex-col gap-16">
-        <CharactersListing />
-        <EpisodeListing />
+        <HomeHeroHeader />
+
+        <PageContainer>
+            <CharactersListing />
+            <EpisodeListing />
+        </PageContainer>
     </div>
 </template>

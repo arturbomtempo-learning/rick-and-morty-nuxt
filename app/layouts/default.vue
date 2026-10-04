@@ -1,9 +1,7 @@
 <template>
-    <main class="bg-[#1e1e1e]">
-        <div class="text-white max-w-[1224px] w-full mx-auto">
-            <slot />
+    <main class="bg-[#1e1e1e] text-white">
+        <slot />
 
-            <Footer />
-        </div>
+        <Footer />
     </main>
 </template>
