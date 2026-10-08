@@ -28,7 +28,7 @@ const highlightImage = computed(() =>
                     <p class="text-primary">
                         {{
                             isDark
-                                ? 'Ai sim, Porr#@%&*'
+                                ? 'Agora sim! Bem mais confortável para os olhos.'
                                 : 'Wubba Lubba Dub Dub! Cuidado com os olhos.'
                         }}
                     </p>
