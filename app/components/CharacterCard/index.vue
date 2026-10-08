@@ -41,7 +41,7 @@ const status = computed(() => getCharacterStatus(props.character.status));
                 </div>
             </div>
 
-            <FavoriteButton type="character" :id="character.id" class="self-start" />
+            <FavoriteButton type="character" :id="character.id" :size="32" class="self-start" />
         </div>
 
         <SeeDocumentDetails :id="character.id" class="mt-auto" />
